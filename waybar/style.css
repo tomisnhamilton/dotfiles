@@ -40,11 +40,11 @@ window#waybar.empty #window {
     padding: 0px 10px;
     margin: 3.5px 3.5px;
     border-radius: 11px;
-    background-color: @background;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 #workspaces button {
-    color: @foreground;
+    color: @color5;
     padding: 0 3px;
     margin: 0 0.5px;
     min-width: 9px;
@@ -57,9 +57,9 @@ window#waybar.empty #window {
 
 #workspaces button.active {
     transition: all 50ms ease-out;
-    border-top: 3px solid @foreground;
+    border-top: 3px solid @color13;
     margin-bottom: 2px;
-    color: @foreground;
+    color: @color13;
     opacity: 1;
 }
 
@@ -78,6 +78,12 @@ window#waybar.empty #window {
 #custom-update {
     min-width: 12px;
     margin: 0 7.5px;
+    color: @color13;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @foreground;
 }
 
 #tray {
@@ -94,14 +100,34 @@ window#waybar.empty #window {
 
 #bluetooth {
     margin-right: 12px;
+    color: @color13;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @color3;
+}
+
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification,
+#custom-notification.dnd-inhibited-notification,
+#custom-notification.dnd-inhibited-none {
+    color: @color3;
 }
 
 #network {
     margin-right: 9px;
+    color: @color13;
+}
+
+#network.disconnected,
+#network.disabled {
+    color: @color3;
 }
 
 #custom-gamemode {
     margin-right: 8px;
+    color: @color13;
 }
 
 #custom-idle-indicator,
@@ -123,6 +149,15 @@ tooltip label {
     margin-left: 7px;
     font-weight: 900;
     font-size: 12px;
+    color: @color13;
+}
+
+#custom-notification {
+    color: @color13;
+}
+
+#custom-power {
+    color: @color7;
 }
 
 #custom-active_window {
@@ -130,27 +165,8 @@ tooltip label {
     margin-top: 3px;
     margin-bottom: 3px;
     border-radius: 14px;
-    background: @background;
+    background: transparent;
     font-size: 12px;
-}
-
-#custom-update {
-    font-size: 10px;
-}
-
-#custom-screenrecording-indicator {
-    min-width: 12px;
-    margin-left: 8.75px;
-    font-size: 10px;
-}
-
-#custom-screenrecording-indicator.active {
-    color: red;
-}
-
-#custom-omarchy {
-    margin-left: 8px;
-    margin-right: 4px;
 }
 
 #cpu,
@@ -158,6 +174,11 @@ tooltip label {
     margin-left: 0px;
     font-size: 18px;
     padding: 3px 0px;
+    color: @color13;
+}
+
+#custom-hyprland {
+    color: @color13;
 }
 
 #group-right1,
@@ -174,15 +195,45 @@ tooltip label {
 #group-center4,
 #group_center4,
 #center4,
-#group-center3,
-#group_center3,
 #center3,
 #group-center2,
 #group_center2,
 #center2 {
     font-weight: 800;
-    background: @background;
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 12px;
     padding: 0px 5px;
     margin: 3.5px 2px;
+}
+
+#image#album {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 8px;
+    margin-right: 2px;
+    border-radius: 6px;
+}
+
+#mpris,
+#cava {
+    background-color: transparent; /* They are inside the center3 pill which already has a background */
+    color: @color13;
+    padding: 0 8px;
+    font-size: 14px; /* Adjust size to make the bars look clear */
+}
+
+#pulseaudio.muted {
+    color: @color3; /* Or any red/dim color from your pywal palette */
+}
+
+#pulseaudio {
+    color: @color13; /* Or any red/dim color from your pywal palette */
+}
+
+#group_center3,
+#group-center3 {
+    background: @background;
+    border-radius: 12px;
+    padding: 0px 8px;
+    /* This creates the 'pill' container for your media */
 }

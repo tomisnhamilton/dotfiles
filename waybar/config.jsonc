@@ -28,6 +28,7 @@
         "custom/separator#blank",
         "custom/separator#blank",
         "custom/separator#blank",
+        "custom/gamemode",
         "custom/separator#blank",
         "cpu",
         "memory",
@@ -44,12 +45,10 @@
       "orientation": "inherit",
       "modules": [
         "custom/separator#blank",
-        "custom/gamemode",
-        //"custom/idle-indicator",
-        //"custom/notification-silencing-indicator",
-        //"custom/screenrecording-indicator",
+        "image#album",
         "custom/separator#blank",
-        "custom/media",
+        "mpris",
+        "cava",
         "custom/separator#blank",
       ],
     },
@@ -74,6 +73,7 @@
       "exec": "~/.config/waybar/window.sh",
       "return-type": "json",
       "markup": true,
+      "min-length": 20,
     },
 
     "hyprland/workspaces": {
@@ -107,7 +107,6 @@
     },
 
     "custom/hyprland": {
-      // "format": "󰹡",
       "format": "<span size='11500'>󰣇 </span>",
       "on-click": "",
       "on-click-right": "xdg-terminal-exec",
@@ -180,32 +179,65 @@
 
     "pulseaudio": {
       "format": "<span size='11500'>{icon}</span>",
-      "on-click": "omarchy-launch-or-focus-tui wiremix",
-      "on-click-right": "pamixer -t",
+      "on-click": "pamixer -t",
+      "on-click-right": "pavucontrol",
       "tooltip-format": "Playing at {volume}%",
-      "scroll-step": 5,
+      "scroll-step": 2,
       "format-muted": "",
       "format-icons": {
         "default": [" ", " ", " "],
       },
     },
 
-    // "custom/screenrecording-indicator": {
-    //   "on-click": "omarchy-cmd-screenrecord",
-    //   "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
-    //   "signal": 8,
-    //   "return-type": "json",
-    // },
-
     "tray": {
       "icon-size": 16,
       "spacing": 8,
+    },
+
+    "image#album": {
+      "path": "/tmp/cover.png",
+      "size": 32,
+      "interval": 1,
+      "on-click": "playerctl play-pause",
     },
 
     "custom/media": {
       "exec": "title=$(playerctl metadata title 2>/dev/null); if [ -n \"$title\" ]; then echo \"${title:0:25} \"; else echo \"         No media          \"; fi",
       "interval": 2,
       "on-click": "playerctl play-pause",
+    },
+
+    "mpris": {
+      "format": "{player_icon} {title}",
+      "format-paused": "{status_icon} <i>{title}</i>",
+      "player-icons": {
+        "default": "▶",
+        "spotify": "",
+        "firefox": "",
+      },
+      "status-icons": {
+        "paused": "⏸",
+      },
+      "max-length": 15,
+      "min-length": 15,
+    },
+
+    "cava": {
+      "framerate": 120,
+      "autosens": 1,
+      "bars": 12,
+      "lower_cutoff_freq": 50,
+      "higher_cutoff_freq": 10000,
+      "sleep-timer": 5,
+      "method": "pipewire",
+      "source": "auto",
+      "stereo": true,
+      "reverse": false,
+      "bar_delimiter": 0,
+      "monstercat": false,
+      "waves": false,
+      "noise_reduction": 0.77,
+      "format-icons": [" ", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     },
 
     "custom/separator#blank": {
@@ -219,20 +251,6 @@
       "interval": "once",
       "tooltip": false,
     },
-
-    // "custom/idle-indicator": {
-    //   "on-click": "omarchy-toggle-idle",
-    //   "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
-    //   "signal": 9,
-    //   "return-type": "json",
-    // },
-
-    // "custom/notification-silencing-indicator": {
-    //   "on-click": "omarchy-toggle-notification-silencing",
-    //   "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
-    //   "signal": 10,
-    //   "return-type": "json",
-    // },
 
     "custom/gamemode": {
       "exec": "test -f ~/.cache/hypr_gamemode && echo '{\"text\":\"\"}' || echo '{\"text\":\"\"}'",
