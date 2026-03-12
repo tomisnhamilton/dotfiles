@@ -8,12 +8,13 @@
   "margin-right": 10,
   "margin-left": 10,
   "margin-top": 2,
+  "margin-bottom": -4,
   "modules-left": [],
   "modules-center": [
     "group/center4",
     "group/center3",
     "hyprland/workspaces",
-    "group/center2"
+    "group/center2",
   ],
   "modules-right": [],
 
@@ -31,9 +32,11 @@
       "memory",
       "battery",
       "custom/separator#blank",
+      "custom/notification",
+      "custom/separator#blank",
       "custom/power",
-      "custom/separator#blank"
-    ]
+      "custom/separator#blank",
+    ],
   },
 
   "group/center3": {
@@ -45,9 +48,9 @@
       "custom/notification-silencing-indicator",
       "custom/screenrecording-indicator",
       "custom/separator#blank",
+      "group/media",
       "custom/separator#blank",
-      "custom/media"
-    ]
+    ],
   },
 
   "group/center4": {
@@ -60,16 +63,20 @@
       "tray",
       "network",
       "pulseaudio",
-      "bluetooth"
-    ]
+      "bluetooth",
+    ],
   },
 
+  "group/media": {
+    "orientation": "inherit",
+    "modules": ["custom/media", "custom/wayves"],
+  },
   // MODULES
 
   "custom/active_window": {
     "exec": "~/.config/waybar/window.sh",
     "return-type": "json",
-    "markup": true
+    "markup": true,
   },
 
   "hyprland/workspaces": {
@@ -86,7 +93,7 @@
       "7": "<span size='13500'>󰲬</span>",
       "8": "<span size='13500'>󰲮</span>",
       "9": "<span size='13500'>󰲰</span>",
-      "10": "<span size='13500'>󰿬</span>"
+      "10": "<span size='13500'>󰿬</span>",
     },
     "persistent-workspaces": {
       "1": [],
@@ -98,16 +105,16 @@
       "7": [],
       "8": [],
       "9": [],
-      "10": []
-    }
+      "10": [],
+    },
   },
 
   "custom/hyprland": {
     // "format": "󰹡",
     "format": "<span size='11500'>󰣇 </span>",
-    "on-click": "omarchy-menu",
+    "on-click": "",
     "on-click-right": "xdg-terminal-exec",
-    "tooltip-format": "Omarchy Menu\n\nSuper + Space"
+    "tooltip-format": "Menu\n\nSuper + Space",
   },
 
   "cpu": {
@@ -140,15 +147,15 @@
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
     "states": {
       "warning": 20,
-      "critical": 10
-    }
+      "critical": 10,
+    },
   },
 
   "custom/clock": {
     "exec": "~/.config/waybar/clock.sh",
     "interval": 1,
     "return-type": "json",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "network": {
@@ -162,7 +169,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "airctl"
+    "on-click": "airctl",
   },
 
   "bluetooth": {
@@ -182,7 +189,7 @@
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
-      "default": [" ", " ", " "]
+      "default": [" ", " ", " "],
     },
   },
 
@@ -190,44 +197,49 @@
     "on-click": "omarchy-cmd-screenrecord",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
     "signal": 8,
-    "return-type": "json"
+    "return-type": "json",
   },
 
   "tray": {
     "icon-size": 16,
-    "spacing": 8
+    "spacing": 8,
   },
 
   "custom/media": {
-    "exec": "title=$(playerctl metadata title 2>/dev/null); if [ -n \"$title\" ]; then echo \"  ${title:0:25} \"; else echo \"         No media           \"; fi",
+    "exec": "title=$(playerctl metadata title 2>/dev/null); if [ -n \"$title\" ]; then echo \"${title:0:25} \"; else echo \"         No media          \"; fi",
     "interval": 2,
-    "on-click": "playerctl play-pause"
+    "on-click": "playerctl play-pause",
+  },
+
+  "custom/wayves": {
+    "format": "{}",
+    "exec": "python wayves/wayves.py -o cava=right -i cava=right -a cava=right",
   },
 
   "custom/separator#blank": {
     "format": " ",
     "interval": "once",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/separator#dot": {
     "format": " ",
     "interval": "once",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "custom/idle-indicator": {
     "on-click": "omarchy-toggle-idle",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
     "signal": 9,
-    "return-type": "json"
+    "return-type": "json",
   },
 
   "custom/notification-silencing-indicator": {
     "on-click": "omarchy-toggle-notification-silencing",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
     "signal": 10,
-    "return-type": "json"
+    "return-type": "json",
   },
 
   "custom/gamemode": {
@@ -236,10 +248,30 @@
     "interval": 1,
     "return-type": "json",
     "tooltip": true,
-    "tooltip-format": "GameMode"
+    "tooltip-format": "GameMode",
   },
   "custom/power": {
     "format": "⏻",
-    "on-click": "wlogout"
-  }
+    "on-click": "wlogout",
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": " ",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": " ",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": " ",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
 }
