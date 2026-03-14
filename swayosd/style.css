@@ -1,0 +1,31 @@
+/* Import pywal colors */
+@import "../../.cache/wal/colors-waybar.css";
+
+window {
+    background: rgba(0, 0, 0, 0.7); /* Fallback */
+    background-color: rgba(0, 0, 0, 0.7); /* Use pywal background */
+    border-radius: 15px;
+    /* Use your accent color (usually color1 or color2) for the border */
+    border: 2px solid @background;
+}
+
+#container {
+    margin: 16px;
+}
+
+image {
+    color: @color13; /* Icon color matches text */
+}
+
+progressbar {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* This makes the "filled" part of the bar match your pywal theme */
+progressbar trough highlight {
+    color: @color13;
+    background: @color13;
+    background-color: @color13;
+    border-radius: 10px;
+}
