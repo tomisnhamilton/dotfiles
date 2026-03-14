@@ -72,18 +72,23 @@ window#waybar.empty #window {
     opacity: 1;
 }
 
-#battery,
 #pulseaudio,
 #custom-screenrecording-indicator,
 #custom-update {
     min-width: 12px;
-    margin: 0 7.5px;
+    margin: 0px 7.5px;
     color: @color13;
+}
+
+#battery {
+    color: @color4;
+    min-width: 12px;
+    margin: 0px 7.5px;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: @foreground;
+    color: @color13;
 }
 
 #tray {
