@@ -6,13 +6,13 @@
 }
 {
     "label" : "shutdown",
-    "action" : "hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'",
+    "action" : "shutdown -P 0",
     "text" : "Shutdown",
     "keybind" : "s"
 }
 {
     "label" : "reboot",
-    "action" : "reboot",
+    "action" : "shutdown -r 0",
     "text" : "Reboot",
     "keybind" : "r"
 }
