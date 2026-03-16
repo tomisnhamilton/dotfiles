@@ -223,8 +223,20 @@ tooltip label {
 #cava {
     background-color: transparent; /* They are inside the center3 pill which already has a background */
     color: @color13;
-    padding: 0 8px;
+    padding: 0 4px;
     font-size: 14px; /* Adjust size to make the bars look clear */
+}
+
+#custom-player-prev,
+#custom-player-next {
+    color: @color13; /* Matches your MPRIS and Cava color */
+    font-size: 16px;
+    padding: 0 5px;
+}
+
+#custom-player-prev:hover,
+#custom-player-next:hover {
+    color: @foreground; /* Slight highlight on hover */
 }
 
 #pulseaudio.muted {

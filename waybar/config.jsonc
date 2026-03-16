@@ -47,9 +47,13 @@
         "custom/separator#blank",
         "image#album",
         "custom/separator#blank",
+        "custom/separator#blank",
+        "custom/player-prev",
+        "custom/player-next",
         "mpris",
         "cava",
         "custom/separator#blank",
+        "custom/media-vis",
       ],
     },
 
@@ -222,11 +226,23 @@
       "min-length": 15,
     },
 
+    "custom/player-prev": {
+      "format": "󰒮",
+      "on-click": "playerctl previous",
+      "tooltip": false,
+    },
+
+    "custom/player-next": {
+      "format": "󰒭",
+      "on-click": "playerctl next",
+      "tooltip": false,
+    },
+
     "cava": {
       "framerate": 120,
       "autosens": 1,
       "bars": 12,
-      "lower_cutoff_freq": 50,
+      "lower_cutoff_freq": 20,
       "higher_cutoff_freq": 10000,
       "sleep-timer": 5,
       "method": "pipewire",
@@ -236,7 +252,7 @@
       "bar_delimiter": 0,
       "monstercat": false,
       "waves": false,
-      "noise_reduction": 0.77,
+      "noise_reduction": 0.5,
       "format-icons": [" ", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     },
 
