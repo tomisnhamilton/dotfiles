@@ -1,0 +1,4 @@
+accent_primary = "{color5}"
+accent_secondary = "{color6}"
+background = "{background}"
+foreground = "{foreground}"
