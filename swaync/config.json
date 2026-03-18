@@ -33,13 +33,6 @@
       "urgency": "Normal"
     }
   },
-  "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify"
-    }
-  },
   "widgets": ["mpris", "dnd", "title", "notifications", "buttons-grid"],
   "widget-config": {
     "title": {

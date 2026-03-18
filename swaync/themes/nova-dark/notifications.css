@@ -1,4 +1,4 @@
-@define-color text            @foreground;
+@define-color text            @color13;
 @define-color background-alt  @color1;
 @define-color selected        @color3;
 @define-color hover           @color5;
