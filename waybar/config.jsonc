@@ -65,9 +65,8 @@
         "custom/separator#blank",
         "custom/separator#blank",
         "tray",
-        "network",
+        "custom/orbit",
         "pulseaudio",
-        "bluetooth",
       ],
     },
 
@@ -169,7 +168,15 @@
       "tooltip-format-disconnected": "Disconnected",
       "interval": 3,
       "spacing": 1,
-      "on-click": "airctl",
+      "on-click": "innu",
+    },
+
+    "custom/orbit": {
+      "exec": "orbit waybar-status",
+      "return-type": "json",
+      "interval": 10,
+      "on-click": "orbit toggle top-right",
+      "format": "󱗿",
     },
 
     "bluetooth": {
