@@ -1,0 +1,56 @@
+{
+  "repos": [
+    {
+      "url": "https://github.com/fccview/fccview-degoog-extensions.git",
+      "localPath": "bea34e7e-fccview-degoog-extensions",
+      "addedAt": "2026-03-24T02:16:26.675Z",
+      "lastFetched": "2026-03-24T02:22:05.222Z",
+      "name": "fccview-degoog-extensions",
+      "description": "Plugins and themes for degoog search.",
+      "error": null,
+      "repoImage": "https://avatars.githubusercontent.com/u/112867047?s=512"
+    }
+  ],
+  "installed": [
+    {
+      "repoUrl": "https://github.com/fccview/fccview-degoog-extensions.git",
+      "type": "plugin",
+      "itemPath": "plugins/define",
+      "installedAs": "define",
+      "installedAt": "2026-03-24T02:16:36.277Z",
+      "version": "1.0.1"
+    },
+    {
+      "repoUrl": "https://github.com/fccview/fccview-degoog-extensions.git",
+      "type": "plugin",
+      "itemPath": "plugins/math-slot",
+      "installedAs": "math-slot",
+      "installedAt": "2026-03-24T02:17:30.548Z",
+      "version": "1.1.0"
+    },
+    {
+      "repoUrl": "https://github.com/fccview/fccview-degoog-extensions.git",
+      "type": "theme",
+      "itemPath": "themes/zen",
+      "installedAs": "zen",
+      "installedAt": "2026-03-24T02:21:43.836Z",
+      "version": "1.1.0"
+    },
+    {
+      "repoUrl": "https://github.com/fccview/fccview-degoog-extensions.git",
+      "type": "plugin",
+      "itemPath": "plugins/search-history",
+      "installedAs": "search-history",
+      "installedAt": "2026-03-24T02:22:40.510Z",
+      "version": "1.0.1"
+    },
+    {
+      "repoUrl": "https://github.com/fccview/fccview-degoog-extensions.git",
+      "type": "plugin",
+      "itemPath": "plugins/github-slot",
+      "installedAs": "github-slot",
+      "installedAt": "2026-03-24T02:22:43.236Z",
+      "version": "1.0.1"
+    }
+  ]
+}
