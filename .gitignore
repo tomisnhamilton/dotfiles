@@ -22,10 +22,9 @@
 .cache
 .cargo
 .electron-gyp
-.gnugp
+.gnupg
 .local
 .npm
-
 .pki
 .rustup
 .ssh
@@ -42,7 +41,7 @@ Templates
 Videos
 winboat
 .bash*
-.gtkrc
+.gtkrc*
 .p10k.zsh
 .profile
 .pulse-cookie
