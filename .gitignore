@@ -1,4 +1,16 @@
 ## Config
+.config/autostart
+.config/easyeffects
+.config/Kvantum
+.config/obsidian
+.config/qt6ct
+.config/remmina
+.config/spotify
+.config/systemd
+.config/xdg*
+.config/arkrc
+.config/kde*
+.config/pavucontrol.ini
 .config/dolphinrc
 .config/yay
 .config/xsettingsd
