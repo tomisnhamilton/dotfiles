@@ -31,6 +31,10 @@
 .config/simple-update-notifier
 .config/user-*
 
+## Docker
+.docker/degoog/data
+
+## Common
 .cache
 .cargo
 .electron-gyp
@@ -63,3 +67,4 @@ winboat
 .zsh_history
 .zshenv
 .zshrc.pre-oh-my-zsh
+.gitconfig
